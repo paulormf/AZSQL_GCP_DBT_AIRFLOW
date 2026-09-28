@@ -1,4 +1,4 @@
-# Entrevista Porto — Data Engineering Pipeline
+# Data Engineering Pipeline - Azure SQL, GCP, dbt e Airflow
 
 Pipeline de Engenharia de Dados desenvolvido para demonstrar práticas de ingestão incremental, Data Lake, Data Warehouse, modelagem dimensional, transformação com dbt, orquestração com Airflow, qualidade de dados e governança.
 
