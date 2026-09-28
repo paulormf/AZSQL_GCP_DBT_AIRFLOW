@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: dim_produtos
+    description: "Dimensão de produtos."
+
+    columns:
+      - name: id_produto
+        description: "Chave do produto."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: nome
+        description: "Nome do produto."
+        data_tests:
+          - not_null
+
+      - name: categoria
+        description: "Categoria do produto."
+
+      - name: marca
+        description: "Marca do produto."
+
+      - name: preco
+        description: "Preço cadastrado do produto."
+        data_tests:
+          - not_null
+
+      - name: ativo
+        description: "Indica se o produto está ativo."
+        data_tests:
+          - not_null

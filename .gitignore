@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+keys/
+*.key
+*.pem
+*.json
+credentials.json
+gcp.json
+
+# Python / uv
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Airflow
+logs/
+airflow/logs/
+airflow/.env
+airflow/keys/
+airflow/config/airflow.cfg
+
+# dbt
+entrevistaporto_dbt/target/
+entrevistaporto_dbt/logs/
+entrevistaporto_dbt/dbt_packages/
+entrevistaporto_dbt/.user.yml
+
+# Local data and temporary files
+data/
+*.parquet
+*.csv
+*.xlsx
+*.bak
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary inventory
+estrutura.txt

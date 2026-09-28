@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: fct_pedidos
+    description: "Fato de pedidos com granularidade de um registro por pedido."
+
+    columns:
+      - name: id_pedido
+        description: "Identificador único do pedido."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: id_cliente
+        description: "Identificador do cliente associado ao pedido."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_clientes')
+              field: id_cliente
+
+      - name: id_vendedor
+        description: "Identificador do vendedor associado ao pedido."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_vendedores')
+              field: id_vendedor
+
+      - name: data_pedido
+        description: "Data e hora em que o pedido foi realizado."
+        data_tests:
+          - not_null
+
+      - name: valor_total
+        description: "Valor total do pedido."
+        data_tests:
+          - not_null

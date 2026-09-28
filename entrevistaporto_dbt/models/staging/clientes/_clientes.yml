@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: botbrewpub-ghsurp
+    schema: entrevistaporto_bronze
+
+    tables:
+      - name: clientes
+        description: "Dados brutos de clientes provenientes do pipeline de ingestão."
+
+        columns:
+          - name: id_cliente
+            description: "Identificador único do cliente."
+
+          - name: nome
+            description: "Nome do cliente. Dado pessoal."
+
+          - name: email
+            description: "E-mail do cliente. Dado pessoal."
+
+          - name: cidade
+            description: "Cidade do cliente."
+
+          - name: estado
+            description: "Estado do cliente."
+
+          - name: created_at
+            description: "Data e hora de criação do registro."
+
+          - name: updated_at
+            description: "Data e hora da última atualização do registro."

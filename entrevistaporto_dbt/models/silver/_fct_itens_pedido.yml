@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: fct_itens_pedido
+    description: "Fato de itens dos pedidos. Grão: um registro por item do pedido."
+
+    columns:
+      - name: id_item
+        description: "Chave única do item."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: id_pedido
+        description: "Identificador do pedido."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('fct_pedidos')
+              field: id_pedido
+
+      - name: id_produto
+        description: "Identificador do produto."
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_produtos')
+              field: id_produto
+
+      - name: quantidade
+        description: "Quantidade de unidades do produto."
+        data_tests:
+          - not_null
+
+      - name: preco_unitario
+        description: "Preço unitário do item."
+        data_tests:
+          - not_null
+
+      - name: desconto
+        description: "Percentual de desconto aplicado ao item."
+        data_tests:
+          - not_null
+
+      - name: valor_bruto
+        description: "Valor antes do desconto."
+        data_tests:
+          - not_null
+
+      - name: valor_desconto
+        description: "Valor monetário do desconto."
+        data_tests:
+          - not_null
+
+      - name: valor_liquido
+        description: "Valor final do item após desconto."
+        data_tests:
+          - not_null

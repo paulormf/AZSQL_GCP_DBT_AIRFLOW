@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: botbrewpub-ghsurp
+    schema: entrevistaporto_bronze
+
+    tables:
+      - name: itens_pedido
+        description: "Itens dos pedidos provenientes da camada Bronze."
+
+        columns:
+          - name: id_item
+            description: "Identificador único do item do pedido."
+
+          - name: id_pedido
+            description: "Identificador do pedido."
+
+          - name: id_produto
+            description: "Identificador do produto."
+
+          - name: quantidade
+            description: "Quantidade de unidades do produto."
+
+          - name: preco_unitario
+            description: "Preço unitário do produto no momento da venda."
+
+          - name: desconto
+            description: "Percentual de desconto aplicado ao item."
+
+          - name: created_at
+            description: "Data de criação do registro."
+
+          - name: updated_at
+            description: "Data da última atualização do registro."

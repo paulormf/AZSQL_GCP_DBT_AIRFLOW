@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dim_clientes
+    description: "Dimensão de clientes tratada e protegida para consumo analítico."
+
+    columns:
+      - name: id_cliente
+        description: "Identificador único do cliente."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: email_hash
+        description: "Hash SHA-256 do e-mail original do cliente."
+        data_tests:
+          - not_null
+
+      - name: estado
+        description: "UF do cliente."
+        data_tests:
+          - not_null

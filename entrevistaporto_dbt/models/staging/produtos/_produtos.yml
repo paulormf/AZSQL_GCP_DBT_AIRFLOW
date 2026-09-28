@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: botbrewpub-ghsurp
+    schema: entrevistaporto_bronze
+
+    tables:
+      - name: produtos
+        description: "Tabela de produtos proveniente da camada Bronze."
+
+        columns:
+          - name: id_produto
+            description: "Identificador único do produto."
+
+          - name: nome
+            description: "Nome do produto."
+
+          - name: categoria
+            description: "Categoria do produto."
+
+          - name: marca
+            description: "Marca do produto."
+
+          - name: preco
+            description: "Preço atual do produto."
+
+          - name: ativo
+            description: "Indica se o produto está ativo."
+
+          - name: created_at
+            description: "Data de criação do registro."
+
+          - name: updated_at
+            description: "Data da última atualização do registro."

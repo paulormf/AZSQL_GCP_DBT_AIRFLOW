@@ -1,0 +1,242 @@
+version: 1
+
+project:
+  name: entrevistaporto
+  description: "Classificação e tratamento de dados do projeto de Engenharia de Dados"
+
+classification_levels:
+  PUBLIC:
+    description: "Dados que podem ser disponibilizados sem restrição relevante."
+
+  INTERNAL:
+    description: "Dados destinados ao uso interno da organização."
+
+  CONFIDENTIAL:
+    description: "Dados que exigem controle de acesso."
+
+  PII:
+    description: "Dados pessoais que podem identificar ou permitir identificar uma pessoa."
+
+tables:
+
+  clientes:
+    columns:
+      id_cliente:
+        classification: INTERNAL
+        treatment: none
+
+      nome:
+        classification: PII
+        treatment: restricted
+
+      email:
+        classification: PII
+        treatment: hash_sha256
+
+      cidade:
+        classification: INTERNAL
+        treatment: none
+
+      estado:
+        classification: INTERNAL
+        treatment: none
+
+      created_at:
+        classification: INTERNAL
+        treatment: none
+
+      updated_at:
+        classification: INTERNAL
+        treatment: none
+
+  vendedores:
+    columns:
+      id_vendedor:
+        classification: INTERNAL
+        treatment: none
+
+      nome:
+        classification: PII
+        treatment: restricted
+
+      regiao:
+        classification: INTERNAL
+        treatment: none
+
+      estado:
+        classification: INTERNAL
+        treatment: none
+
+      ativo:
+        classification: INTERNAL
+        treatment: none
+
+      created_at:
+        classification: INTERNAL
+        treatment: none
+
+      updated_at:
+        classification: INTERNAL
+        treatment: none
+
+  produtos:
+    columns:
+      id_produto:
+        classification: INTERNAL
+        treatment: none
+
+      nome:
+        classification: INTERNAL
+        treatment: none
+
+      categoria:
+        classification: INTERNAL
+        treatment: none
+
+      marca:
+        classification: INTERNAL
+        treatment: none
+
+      preco:
+        classification: INTERNAL
+        treatment: none
+
+      ativo:
+        classification: INTERNAL
+        treatment: none
+
+      created_at:
+        classification: INTERNAL
+        treatment: none
+
+      updated_at:
+        classification: INTERNAL
+        treatment: none
+
+  pedidos:
+    columns:
+      id_pedido:
+        classification: INTERNAL
+        treatment: none
+
+      id_cliente:
+        classification: INTERNAL
+        treatment: none
+
+      id_vendedor:
+        classification: INTERNAL
+        treatment: none
+
+      data_pedido:
+        classification: INTERNAL
+        treatment: none
+
+      status:
+        classification: INTERNAL
+        treatment: none
+
+      valor_total:
+        classification: CONFIDENTIAL
+        treatment: restricted
+
+      created_at:
+        classification: INTERNAL
+        treatment: none
+
+      updated_at:
+        classification: INTERNAL
+        treatment: none
+
+  itens_pedido:
+    columns:
+      id_item:
+        classification: INTERNAL
+        treatment: none
+
+      id_pedido:
+        classification: INTERNAL
+        treatment: none
+
+      id_produto:
+        classification: INTERNAL
+        treatment: none
+
+      quantidade:
+        classification: INTERNAL
+        treatment: none
+
+      preco_unitario:
+        classification: CONFIDENTIAL
+        treatment: restricted
+
+      desconto:
+        classification: CONFIDENTIAL
+        treatment: restricted
+
+      created_at:
+        classification: INTERNAL
+        treatment: none
+
+      updated_at:
+        classification: INTERNAL
+        treatment: none
+
+  pagamentos:
+    columns:
+      id_pagamento:
+        classification: INTERNAL
+        treatment: none
+
+      id_pedido:
+        classification: INTERNAL
+        treatment: none
+
+      data_pagamento:
+        classification: CONFIDENTIAL
+        treatment: restricted
+
+      valor:
+        classification: CONFIDENTIAL
+        treatment: restricted
+
+      forma_pagamento:
+        classification: CONFIDENTIAL
+        treatment: restricted
+
+      status:
+        classification: INTERNAL
+        treatment: none
+
+      created_at:
+        classification: INTERNAL
+        treatment: none
+
+      updated_at:
+        classification: INTERNAL
+        treatment: none
+
+  avaliacoes_clientes:
+    columns:
+      id_avaliacao:
+        classification: INTERNAL
+        treatment: none
+
+      id_cliente:
+        classification: INTERNAL
+        treatment: none
+
+      nota:
+        classification: INTERNAL
+        treatment: none
+
+      comentario:
+        classification: PII
+        treatment: restricted
+
+      created_at:
+        classification: INTERNAL
+        treatment: none
+
+      updated_at:
+        classification: INTERNAL
+        treatment: none

@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: mart_vendas
+    description: "Data Mart comercial com pedidos enriquecidos com informações de clientes e vendedores."
+
+    columns:
+
+      - name: id_pedido
+        description: "Identificador único do pedido."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: id_cliente
+        description: "Identificador do cliente."
+        data_tests:
+          - not_null
+
+      - name: id_vendedor
+        description: "Identificador do vendedor."
+        data_tests:
+          - not_null
+
+      - name: data_pedido
+        description: "Data e hora em que o pedido foi realizado."
+        data_tests:
+          - not_null
+
+      - name: valor_total
+        description: "Valor total do pedido."
+        data_tests:
+          - not_null
+
+      - name: status
+        description: "Status atual do pedido."
+        data_tests:
+          - not_null
+
+      - name: pedido_faturado
+        description: "Indicador de pedido faturado."
+        data_tests:
+          - not_null
+
+      - name: pedido_cancelado
+        description: "Indicador de pedido cancelado."
+        data_tests:
+          - not_null

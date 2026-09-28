@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: botbrewpub-ghsurp
+    schema: entrevistaporto_bronze
+
+    tables:
+      - name: vendedores
+        description: "Dados brutos de vendedores provenientes do pipeline de ingestão."
+
+        columns:
+          - name: id_vendedor
+            description: "Identificador único do vendedor."
+
+          - name: nome
+            description: "Nome do vendedor."
+
+          - name: regiao
+            description: "Região de atuação do vendedor."
+
+          - name: estado
+            description: "Estado de atuação do vendedor."
+
+          - name: ativo
+            description: "Indica se o vendedor está ativo."
+
+          - name: created_at
+            description: "Data e hora de criação do registro."
+
+          - name: updated_at
+            description: "Data e hora da última atualização do registro."

@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_vendedores
+    description: "Dimensão de vendedores tratada para consumo analítico."
+
+    columns:
+      - name: id_vendedor
+        description: "Identificador único do vendedor."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: nome
+        description: "Nome do vendedor."
+        data_tests:
+          - not_null
+
+      - name: estado
+        description: "Estado de atuação do vendedor."
+        data_tests:
+          - not_null
+
+      - name: ativo
+        description: "Indica se o vendedor está ativo."
+        data_tests:
+          - not_null

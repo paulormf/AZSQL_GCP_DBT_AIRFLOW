@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: botbrewpub-ghsurp
+    schema: entrevistaporto_bronze
+
+    tables:
+      - name: pedidos
+        description: "Dados brutos de pedidos provenientes do pipeline de ingestão."
+
+        columns:
+          - name: id_pedido
+            description: "Identificador único do pedido."
+
+          - name: id_cliente
+            description: "Identificador do cliente."
+
+          - name: id_vendedor
+            description: "Identificador do vendedor."
+
+          - name: data_pedido
+            description: "Data e hora do pedido."
+
+          - name: status
+            description: "Status atual do pedido."
+
+          - name: valor_total
+            description: "Valor total do pedido."
+
+          - name: created_at
+            description: "Data e hora de criação do registro."
+
+          - name: updated_at
+            description: "Data e hora da última atualização do registro."
